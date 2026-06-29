@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tanya Topacharova — Selected Projects</title>
+<meta name="description" content="Selected projects by Tanya Topacharova — full-stack web apps and AI automations, built end to end.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --purple:#6d28d9; --purple-2:#7c3aed; --purple-ink:#4c1d95;
+    --ink:#1b1f2a; --muted:#5c6273; --faint:#8b90a0;
+    --line:#e9e6f2; --tint:#f6f4fc; --chip:#efeafc; --paper:#fff; --bg:#fbfaff;
+    --radius:18px; --shadow:0 18px 50px -18px rgba(60,40,110,.28);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+  .serif{font-family:'Fraunces',Georgia,serif}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(12px);background:rgba(251,250,255,.82);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+  nav .brand{font-weight:700;letter-spacing:.01em}
+  nav .links{display:flex;gap:26px;align-items:center;font-size:14.5px;color:var(--muted)}
+  nav .links a:hover{color:var(--purple)}
+  nav .dl{background:var(--purple);color:#fff;padding:9px 16px;border-radius:40px;font-weight:600;font-size:13.5px;transition:.2s}
+  nav .dl:hover{background:var(--purple-ink);color:#fff}
+  @media(max-width:640px){nav .links a:not(.dl){display:none}}
+
+  /* hero */
+  header.hero{position:relative;overflow:hidden;padding:92px 0 70px}
+  .hero .blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;z-index:0}
+  .hero .b1{width:420px;height:420px;background:#c9b6f5;top:-160px;right:-80px}
+  .hero .b2{width:320px;height:320px;background:#ffe1c2;bottom:-140px;left:-100px;opacity:.45}
+  .hero .wrap{position:relative;z-index:1}
+  .eyebrow{color:var(--purple);font-weight:600;font-size:13px;letter-spacing:.22em;text-transform:uppercase}
+  h1.name{font-size:clamp(42px,8vw,82px);font-weight:600;line-height:1.02;letter-spacing:-.02em;margin:14px 0 0}
+  .lead{font-size:clamp(17px,2.4vw,21px);color:var(--muted);max-width:620px;margin:22px 0 0}
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:40px;font-weight:600;font-size:14.5px;transition:.2s;border:1px solid transparent}
+  .btn.primary{background:var(--purple);color:#fff}
+  .btn.primary:hover{background:var(--purple-ink)}
+  .btn.ghost{background:#fff;border-color:var(--line);color:var(--ink)}
+  .btn.ghost:hover{border-color:var(--purple);color:var(--purple)}
+  .stack{display:flex;flex-wrap:wrap;gap:9px;margin-top:34px}
+  .stack .chip{background:var(--chip);color:var(--purple);font-weight:600}
+
+  .chip{font-size:12.5px;padding:5px 13px;border-radius:40px;background:#f1f0f5;color:var(--muted);border:1px solid var(--line);white-space:nowrap}
+
+  /* section heads */
+  section{padding:64px 0}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:40px}
+  .sec-head h2{font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--purple)}
+  .sec-head .rule{flex:1;height:1px;background:var(--line)}
+  .sec-head .count{font-size:13px;color:var(--faint)}
+
+  /* featured rows */
+  .feat{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center;margin-bottom:88px}
+  .feat:last-child{margin-bottom:0}
+  .feat.flip .media{order:2}
+  .feat .info{min-width:0}
+  .badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);background:var(--chip);border:1px solid #ddd2f7;padding:5px 12px;border-radius:40px}
+  .feat h3{font-family:'Fraunces',serif;font-size:30px;line-height:1.14;font-weight:600;letter-spacing:-.015em;margin:16px 0 8px}
+  .feat .tag{color:var(--purple-2);font-weight:600;font-size:16px;margin-bottom:18px}
+  .field{margin-bottom:12px;color:#3a3f4f;font-size:15px}
+  .field .lbl{display:block;color:var(--purple);font-weight:700;font-size:11px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:2px}
+  .feat .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+
+  /* device frames */
+  .browser{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+  .browser .bar{height:34px;background:#f3f1f8;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:7px;padding:0 14px}
+  .browser .bar i{width:11px;height:11px;border-radius:50%;display:inline-block}
+  .browser .bar .r{background:#ff5f56}.browser .bar .y{background:#ffbd2e}.browser .bar .g{background:#27c93f}
+  .browser img{display:block;width:100%}
+  .phonewrap{display:flex;justify-content:center}
+  .phone{width:248px;max-width:74%;border:9px solid #15161c;border-radius:36px;overflow:hidden;box-shadow:var(--shadow);background:#15161c}
+  .phone img{display:block;width:100%}
+
+  /* more grid */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .25s, box-shadow .25s;display:flex;flex-direction:column}
+  .card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+  .card .thumb{height:190px;overflow:hidden;background:var(--tint);border-bottom:1px solid var(--line)}
+  .card .thumb img{width:100%;height:100%;object-fit:cover;object-position:top center}
+  .card .body{padding:22px;display:flex;flex-direction:column;flex:1}
+  .card .top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .card h4{font-family:'Fraunces',serif;font-size:21px;font-weight:600}
+  .card .badge{font-size:9.5px;padding:4px 9px}
+  .card .tag{color:var(--purple-2);font-weight:600;font-size:13.5px;margin:6px 0 12px}
+  .card p{font-size:14px;color:#3a3f4f;flex:1}
+  .card .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+  .card .chip{font-size:11.5px;padding:4px 10px}
+
+  footer{padding:54px 0 70px;border-top:1px solid var(--line);margin-top:30px}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;align-items:center}
+  footer .fname{font-family:'Fraunces',serif;font-size:22px;font-weight:600}
+  footer .fc{color:var(--muted);font-size:14.5px;display:flex;gap:20px;flex-wrap:wrap}
+  footer .fc a:hover{color:var(--purple)}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:860px){
+    .feat{grid-template-columns:1fr;gap:30px;margin-bottom:64px}
+    .feat.flip .media{order:0}
+    .grid{grid-template-columns:1fr}
+    .card .thumb{height:210px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="brand serif">Tanya Topacharova</span>
+    <span class="links">
+      <a href="#featured">Featured</a>
+      <a href="#more">More</a>
+      <a href="#contact">Contact</a>
+      <a class="dl" href="Tanya_Topacharova_Portfolio.pdf" download>Download PDF</a>
+    </span>
+  </div>
+</nav>
+
+<header class="hero">
+  <span class="blob b1"></span><span class="blob b2"></span>
+  <div class="wrap">
+    <div class="eyebrow">Selected Projects</div>
+    <h1 class="name serif">Tanya<br>Topacharova</h1>
+    <p class="lead">I ship full-stack web apps and AI automations end to end — from scoping and design through to deployment.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:tanya.topacharova@gmail.com">✉ Email me</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/tanya-t-48847b177" target="_blank" rel="noopener">in · LinkedIn</a>
+      <a class="btn ghost" href="Tanya_Topacharova_Portfolio.pdf" download>↓ PDF portfolio</a>
+    </div>
+    <div class="stack">
+      <span class="chip">React / TypeScript</span><span class="chip">Next.js</span><span class="chip">Node / Express</span>
+      <span class="chip">React Native / Expo</span><span class="chip">Python</span><span class="chip">MySQL · OpenAPI · Docker</span>
+      <span class="chip">Claude API · MCP</span>
+    </div>
+  </div>
+</header>
+
+<section id="featured">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2>Featured Projects</h2><span class="rule"></span><span class="count">01 — 03</span></div>
+
+    <!-- Nargile -->
+    <article class="feat reveal">
+      <div class="media phonewrap"><div class="phone"><img src="images/nargile.png" alt="Nargile Orders — live customer menu"></div></div>
+      <div class="info">
+        <span class="badge">Full-stack MVP</span>
+        <h3>Nargile Orders</h3>
+        <div class="tag">QR order-to-table platform for a hookah lounge</div>
+        <div class="field"><span class="lbl">Problem</span>Guests wait to flag a waiter; staff re-type every order into the till by hand.</div>
+        <div class="field"><span class="lbl">Built</span>A bilingual (BG / EN) customer menu with a custom “build-your-mix” flavour builder, live order tracking, and a staff dashboard — products &amp; availability, a visual table/QR planner, a live orders board with a server-enforced status workflow, and history. All on a contract-first OpenAPI backend.</div>
+        <div class="field"><span class="lbl">My role</span>Designed and built end to end — frontend, API, database schema and Dockerized deployment.</div>
+        <div class="chips"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Node / Express</span><span class="chip">MySQL</span><span class="chip">OpenAPI</span><span class="chip">Docker</span></div>
+      </div>
+    </article>
+
+    <!-- Report -->
+    <article class="feat flip reveal">
+      <div class="media"><div class="browser"><div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i></div><img src="images/report.jpg" alt="Social Media Report Platform — generated report"></div></div>
+      <div class="info">
+        <span class="badge">Live · real client reports</span>
+        <h3>Social Media Report Platform</h3>
+        <div class="tag">Automated client reporting for a social-media agency</div>
+        <div class="field"><span class="lbl">Problem</span>Every client report was hand-assembled in Canva each month — hours of repetitive work per report.</div>
+        <div class="field"><span class="lbl">Built</span>Pulls raw Instagram / Facebook / TikTok / YouTube metrics and generates branded, client-ready reports — audience demographics, growth charts and top-performing posts — with shareable, PIN-gated client links and one-click PDF / PPTX export.</div>
+        <div class="field"><span class="lbl">My role</span>Built the data collection, the report engine, and the client-facing delivery layer.</div>
+        <div class="chips"><span class="chip">Python</span><span class="chip">Node.js</span><span class="chip">Data viz</span><span class="chip">PDF / PPTX export</span></div>
+      </div>
+    </article>
+
+    <!-- Camp -->
+    <article class="feat reveal">
+      <div class="media"><div class="browser"><div class="bar"><i class="r"></i><i class="y"></i><i class="g"></i></div><img src="images/camp.png" alt="Camp Explorer — bilingual marketing site"></div></div>
+      <div class="info">
+        <span class="badge">Client website</span>
+        <h3>Camp Explorer</h3>
+        <div class="tag">Bilingual marketing site for an adventure-education brand</div>
+        <div class="field"><span class="lbl">Problem</span>A new Saudi youth-adventure brand — led by the first Saudi to ski to the North Pole — needed a fast, credible, fully bilingual web presence.</div>
+        <div class="field"><span class="lbl">Built</span>A responsive marketing site with English / Arabic localization (including RTL), an experiences overview with detail pages, a curriculum-aligned schools section, and full SEO scaffolding — sitemap, Open Graph and JSON-LD structured data.</div>
+        <div class="field"><span class="lbl">My role</span>Built the site end to end on the latest Next.js, including the i18n architecture.</div>
+        <div class="chips"><span class="chip">Next.js 16</span><span class="chip">React 19</span><span class="chip">next-intl (EN / AR)</span><span class="chip">TypeScript</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="more" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2>More Projects</h2><span class="rule"></span><span class="count">03</span></div>
+    <div class="grid">
+      <article class="card reveal">
+        <div class="thumb"><img src="images/instapay.png" alt="InstaPay"></div>
+        <div class="body">
+          <div class="top"><h4>InstaPay</h4><span class="badge">In progress</span></div>
+          <div class="tag">Order-and-pay-at-the-table SaaS (Bulgaria)</div>
+          <p>A product initiative: guests scan a QR, order and pay from their phone, and the order flows straight into the venue’s till — no re-typing, no hardware. I built the positioning and landing page and validated the Bulgarian legal / fiscal path (НАП, СУПТО).</p>
+          <div class="chips"><span class="chip">Product</span><span class="chip">Landing</span><span class="chip">Market &amp; legal</span></div>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="thumb"><img src="images/fitness.png" alt="Fitness Tracker"></div>
+        <div class="body">
+          <div class="top"><h4>Fitness Tracker</h4><span class="badge">Prototype + design</span></div>
+          <div class="tag">Voice-first, calendar-native nutrition tracker</div>
+          <p>For people who quit MyFitnessPal: log meals by voice and write a daily macro summary to your own calendar instead of another siloed app. On-device fuzzy matching keeps it AI-cost-free. Interactive prototype plus full product and pricing design.</p>
+          <div class="chips"><span class="chip">React Native / Expo</span><span class="chip">Web Speech API</span><span class="chip">Fuse.js</span></div>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="thumb"><img src="images/sidequest.png" alt="Side Quest"></div>
+        <div class="body">
+          <div class="top"><h4>Side Quest</h4><span class="badge">Mobile app</span></div>
+          <div class="tag">A playful mobile app of small real-world quests</div>
+          <p>Hands you small, slightly absurd daily missions, then keeps each completed one as a photo in a scrapbook. Card-deck interface with a local-first SQLite store deliberately shaped to become a cloud sync layer later — not a rewrite.</p>
+          <div class="chips"><span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">expo-router</span><span class="chip">SQLite</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <span class="fname serif">Let’s build something.</span>
+    <span class="fc">
+      <a href="mailto:tanya.topacharova@gmail.com">tanya.topacharova@gmail.com</a>
+      <a href="https://www.linkedin.com/in/tanya-t-48847b177" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="Tanya_Topacharova_Portfolio.pdf" download>Download PDF</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
