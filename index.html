@@ -102,6 +102,19 @@
   footer .fc{color:var(--muted);font-size:14.5px;display:flex;gap:20px;flex-wrap:wrap}
   footer .fc a:hover{color:var(--purple)}
 
+  /* QA / experience */
+  #qa .lead-q{font-size:18px;color:var(--muted);max-width:660px;margin-bottom:38px}
+  #qa .lead-q strong{color:var(--ink);font-weight:600}
+  .role{display:grid;grid-template-columns:210px 1fr;gap:32px;padding:30px 0;border-top:1px solid var(--line)}
+  .role:last-of-type{border-bottom:1px solid var(--line)}
+  .role .co{font-family:'Fraunces',serif;font-size:23px;font-weight:600}
+  .role .ttl{color:var(--purple);font-weight:600;font-size:14px;margin-top:4px}
+  .role .dates{color:var(--faint);font-size:13px;margin-top:6px}
+  .role ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+  .role li{position:relative;padding-left:20px;color:#3a3f4f;font-size:15px}
+  .role li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--purple);opacity:.5}
+  @media(max-width:760px){.role{grid-template-columns:1fr;gap:14px;padding:24px 0}}
+
   /* reveal */
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease}
   .reveal.in{opacity:1;transform:none}
@@ -122,6 +135,7 @@
     <span class="links">
       <a href="#featured">Featured</a>
       <a href="#more">More</a>
+      <a href="#qa">Experience</a>
       <a href="#contact">Contact</a>
       <a class="dl" href="Tanya_Topacharova_Portfolio.pdf" download>Download PDF</a>
     </span>
@@ -226,6 +240,45 @@
           <div class="chips"><span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">expo-router</span><span class="chip">SQLite</span></div>
         </div>
       </article>
+    </div>
+  </div>
+</section>
+
+<section id="qa" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2>Quality Engineering</h2><span class="rule"></span><span class="count">QA &amp; test automation</span></div>
+    <p class="lead-q reveal">Before building products full-time, I spent 7+ years in software quality — owning testing and release standards as <strong>QA Lead at SAP</strong>, then going deep on test automation for cross-border payments at Cellpoint Digital.</p>
+
+    <div class="role reveal">
+      <div class="meta">
+        <div class="co serif">SAP</div>
+        <div class="ttl">QA Lead</div>
+        <div class="dates">2018 — 2024 · Sofia</div>
+      </div>
+      <ul>
+        <li>Defined and enforced the team’s testing and release procedures across an edge-computing platform.</li>
+        <li>Ran manual and automated testing (JUnit) and gated releases on quality and security criteria.</li>
+        <li>Led SAST security reporting and a security-tooling migration; authored release notes and operational runbooks.</li>
+        <li>Operated across a Kubernetes / Jenkins CI-CD platform on AWS, Azure and GCP; served as backup Scrum Master.</li>
+      </ul>
+    </div>
+
+    <div class="role reveal">
+      <div class="meta">
+        <div class="co serif">Cellpoint Digital</div>
+        <div class="ttl">Senior Automation QA</div>
+        <div class="dates">2025 — 2026 · Remote</div>
+      </div>
+      <ul>
+        <li>Built end-to-end automated test frameworks for a payment-orchestration platform processing cross-border transactions.</li>
+        <li>Authored E2E tests in TypeScript with Playwright, Cucumber and Gherkin — multicurrency flows and third-party PSP integrations.</li>
+        <li>Debugged distributed long-running workflows on Temporal, cutting mean-time-to-resolution on release blockers.</li>
+        <li>Built API, regression and performance suites that raised coverage and surfaced latency bottlenecks before release.</li>
+      </ul>
+    </div>
+
+    <div class="chips reveal" style="margin-top:26px">
+      <span class="chip">Playwright</span><span class="chip">Cucumber</span><span class="chip">Gherkin</span><span class="chip">JUnit</span><span class="chip">Temporal</span><span class="chip">API testing</span><span class="chip">Regression</span><span class="chip">Performance</span><span class="chip">Jenkins CI/CD</span><span class="chip">SAST</span>
     </div>
   </div>
 </section>
